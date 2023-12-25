@@ -2345,6 +2345,7 @@
              const formData = {
                  phone: phoneInput.value
              }; // Формируем объект с данными для сохранения
+             alert("success");
              sessionStorage.setItem('formData', JSON.stringify(formData)); // Сохраняем данные в локальное хранилище
              form.submit(); // Отправляем форму
          });
