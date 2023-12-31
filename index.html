@@ -2334,6 +2334,12 @@
             var nameValue = form.querySelector('input[name="name"]').value; // Получаем поле для ввода номера телефона
             var productIdValue = form.querySelector('input[name="product_id"]').value; // Получаем поле для ввода номера телефона
             var countryCodeValue = form.querySelector('input[name="country_code"]').value;
+
+            //check if NAME and LASTname
+            if (!nameValue.includes(' ')){
+                alert("Εισαγάγετε το όνομα και το επώνυμο");
+                return 0;
+            }
             
             var myHeaders = new Headers();
             myHeaders.append("Token", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0ciI6IjQiLCJhYyI6IjMiLCJvaSI6IjY1IiwidWkiOiIzNCIsIkFQSV9USU1FIjoxNzAyODkwNjI0fQ.hRXZVR7sByaL_h4gTPUPsWCZl3tjbnaVkblXRNH7iQY");
@@ -2360,9 +2366,9 @@
                 // Here, integrate your response handling logic
                 // For example, if your server sends a specific message on success:
                 if (result.status == true) {
-                    alert("success");
+                    alert("επιτυχία");
                 } else {
-                    alert("error");
+                    alert("λάθος");
                 }
             })
             .catch(error => console.log('error', error));
